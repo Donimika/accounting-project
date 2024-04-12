@@ -1,0 +1,323 @@
+{
+	"info": {
+		"_postman_id": "3f5e2678-b4b2-4d3f-8a29-5a2dce316611",
+		"name": "Invoice starter collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32974194"
+	},
+	"item": [
+		{
+			"name": "Vytvoření osoby",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"ITnetwork s.r.o.\",\r\n  \"identificationNumber\": \"05861381\",\r\n  \"taxNumber\": \"CZ05861381\",\r\n  \"accountNumber\": \"123456789\",\r\n  \"bankCode\": \"5500\",\r\n  \"iban\": \"CZ000123456789\",\r\n  \"telephone\": \"+420 123 123 123\",\r\n  \"mail\": \"redakce@itnetwork.cz\",\r\n  \"street\": \"Karlovo náměstí 290/16, Nové Město (Praha 2)\",\r\n  \"zip\": \"120 00\",\r\n  \"city\": \"Praha\",\r\n  \"country\": \"CZECHIA\",\r\n  \"note\": \"Největší IT akademie v Česku.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/persons",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Úprava osoby",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"ictdemy s.r.o.\",\r\n  \"identificationNumber\": \"05861381\",\r\n  \"taxNumber\": \"CZ05861381\",\r\n  \"accountNumber\": \"123456789\",\r\n  \"bankCode\": \"5500\",\r\n  \"iban\": \"CZ000123456789\",\r\n  \"telephone\": \"+420 123 123 123\",\r\n  \"mail\": \"redakce@itnetwork.cz\",\r\n  \"street\": \"Karlovo náměstí 290/16, Nové Město (Praha 2)\",\r\n  \"zip\": \"120 00\",\r\n  \"city\": \"Praha\",\r\n  \"country\": \"CZECHIA\",\r\n  \"note\": \"Největší IT akademie.\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/persons/2\n",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persons",
+						"2\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Výpis osob",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/persons",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Smazání osoby",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"ITnetwork s.r.o. 22\",\r\n    \"identificationNumber\": \"05861381\",\r\n    \"taxNumber\": \"CZ05861381\",\r\n    \"accountNumber\": \"123456789\",\r\n    \"bankCode\": \"5500\",\r\n    \"iban\": \"CZ000123456789\",\r\n    \"telephone\": \"+420 123 123 123\",\r\n    \"mail\": \"redakce@itnetwork.cz\",\r\n    \"street\": \"Karlovo náměstí 290/16, Nové Město (Praha 2)\",\r\n    \"zip\": \"120 00\",\r\n    \"city\": \"Praha\",\r\n    \"country\": \"CZECHIA\",\r\n    \"note\": \"Největší IT akademie v Česku.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/persons/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persons",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Výpis osoby",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/persons/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persons",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vytvoření faktury",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"invoiceNumber\": 20230012,\r\n  \"seller\": {\r\n    \"_id\": 1\r\n  },\r\n  \"buyer\": {\r\n    \"_id\": 4\r\n  },\r\n  \"issued\": \"2023-07-23\",\r\n  \"dueDate\": \"2023-07-30\",\r\n  \"product\": \"Článek\",\r\n  \"price\": 100,\r\n  \"vat\": 21,\r\n  \"note\": \"Tvorba Spring článků\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/invoices",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"invoices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Výpis faktur",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/invoices?minPrice=1000&limit=3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"invoices"
+					],
+					"query": [
+						{
+							"key": "minPrice",
+							"value": "1000"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Výpis detailu faktury",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/invoices/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"invoices",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Výpis vystavených faktur",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/identification/24681357/sales",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"identification",
+						"24681357",
+						"sales"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Výpis přijatých faktur",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/identification/24681357/purchases",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"identification",
+						"24681357",
+						"purchases"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Úprava faktury",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"invoiceNumber\": 2023042,\r\n  \"seller\": {\r\n    \"_id\": 4\r\n  },\r\n  \"buyer\": {\r\n    \"_id\": 1\r\n  },\r\n  \"issued\": \"2024-07-10\",\r\n  \"dueDate\": \"2024-08-12\",\r\n  \"product\": \"Článek\",\r\n  \"price\": 100,\r\n  \"vat\": 15,\r\n  \"note\": \"Tvorba Spring a React článků\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/invoices/9",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"invoices",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Výpis statistik faktur",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/invoices/statistics",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"invoices",
+						"statistics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Výpis statistik pro jednotlivé společnosti",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/persons/statistics",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persons",
+						"statistics"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
